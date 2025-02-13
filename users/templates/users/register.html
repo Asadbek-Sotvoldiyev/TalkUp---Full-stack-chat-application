@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+
+{% block content %}
+    <div class="container">
+    <div class="row align-items-center justify-content-center min-vh-100 gx-0">
+        <div class="col-12 col-md-5 col-lg-4">
+            <div class="card card-shadow border-0">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-12 text-center">
+                            <h3 class="fw-bold mb-2">Sign Up</h3>
+                            <p>Qaysi qulay bo'lsa shu orqali kiring!</p>
+                        </div>
+                        <div class="col-12">
+                            <a href="{% provider_login_url 'google' %}" class="btn btn-dark w-100 d-flex align-items-center justify-content-center">
+                                <i class="fab fa-google me-2"></i> Sign up with Google
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="{% provider_login_url 'github' %}" class="btn btn-dark w-100 d-flex align-items-center justify-content-center">
+                                <i class="fab fa-github me-2"></i> Sign up with GitHub
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="{% url 'telegram_login' %}" class="btn btn-dark w-100 d-flex align-items-center justify-content-center">
+                                <i class="fab fa-telegram me-2"></i> Sign up with Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>
+                    Already have an account?
+                    <a href="./signin.html">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
