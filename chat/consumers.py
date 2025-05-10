@@ -1,5 +1,7 @@
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 from .models import ChatGroup, Message
 from users.models import User
 from .crypto import encrypt_message, decrypt_message
