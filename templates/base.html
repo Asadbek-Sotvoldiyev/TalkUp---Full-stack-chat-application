@@ -10,7 +10,7 @@
    TalkUp
   </title>
   <!-- Favicon -->
-  <link href="{% static 'assets/img/favicon/favicon.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+  <link href="{% static 'assets/img/favicon/favicon.jpg' %}" rel="shortcut icon" type="image/x-icon"/>
   <!-- Font -->
   <link href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="{% static 'assets/css/css2.css' %}" rel="stylesheet"/>
@@ -18,7 +18,62 @@
   <link class="css-lt" href="{% static 'assets/css/template.bundle.css' %}" media="(prefers-color-scheme: light)" rel="stylesheet"/>
   <link class="css-dk" href="{% static 'assets/css/template.dark.bundle.css' %}" media="(prefers-color-scheme: dark)" rel="stylesheet"/>
   <!-- Theme mode -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1055;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toast {
+            position: relative;
+            min-width: 250px;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: gray;
+            color: white;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.5s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .toast-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 100%;
+            animation: progress-animation 3s linear forwards;
+        }
+
+        @keyframes progress-animation {
+            0% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+            }
+        }
+
+        /* Rang klasslari */
+        .bg-success { background-color: #28a745; }
+        .bg-danger { background-color: #dc3545; }
+        .bg-warning { background-color: #ffc107; color: black; }
+        .bg-info { background-color: #17a2b8; }
+    </style>
+
 
   <script>
    if (localStorage.getItem('color-scheme')) {
@@ -38,6 +93,19 @@
   </script>
  </head>
  <body>
+     <div class="toast-container">
+        {% if messages %}
+            {% for message in messages %}
+                <div id="liveToast{{ forloop.counter }}" class="toast bg-{{ message.tags }}">
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                    <div class="toast-progress"></div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
   {% block layout %}
 
   {% endblock %}
@@ -582,7 +650,7 @@
             history.replaceState(null, null, window.location.pathname);
         }
     </script>
-  <script src="{% static 'assets/js/template.js' %}">
-  </script>
+    <script src="{% static 'assets/js/template.js' %}"></script>
+
  </body>
 </html>

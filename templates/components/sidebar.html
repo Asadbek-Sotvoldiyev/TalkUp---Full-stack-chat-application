@@ -1,500 +1,6 @@
+{% load static %}
 <aside class="sidebar bg-light">
     <div class="tab-content h-100" role="tablist">
-     <!-- Create -->
-     <div class="tab-pane fade h-100" id="tab-content-create-chat" role="tabpanel">
-      <div class="d-flex flex-column h-100">
-       <div class="hide-scrollbar">
-        <div class="container py-8">
-         <!-- Title -->
-         <div class="mb-8">
-          <h2 class="fw-bold m-0">
-           Create chat
-          </h2>
-         </div>
-         <!-- Search -->
-         <div class="mb-6">
-          <div class="mb-5">
-           <form action="#">
-            <div class="input-group">
-             <div class="input-group-text">
-              <div class="icon icon-lg">
-               <svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11" cy="11" r="8">
-                </circle>
-                <line x1="21" x2="16.65" y1="21" y2="16.65">
-                </line>
-               </svg>
-              </div>
-             </div>
-             <input aria-label="Search for messages or users..." class="form-control form-control-lg ps-0" placeholder="Search messages or users" type="text"/>
-            </div>
-           </form>
-          </div>
-          <ul class="nav nav-pills nav-justified" role="tablist">
-           <li class="nav-item">
-            <a aria-controls="create-chat-info" aria-selected="true" class="nav-link active" data-bs-toggle="pill" href="#create-chat-info" role="tab">
-             Details
-            </a>
-           </li>
-           <li class="nav-item">
-            <a aria-controls="create-chat-members" aria-selected="true" class="nav-link" data-bs-toggle="pill" href="#create-chat-members" role="tab">
-             People
-            </a>
-           </li>
-          </ul>
-         </div>
-         <!-- Tabs content -->
-         <div class="tab-content" role="tablist">
-          <div class="tab-pane fade show active" id="create-chat-info" role="tabpanel">
-           <div class="card border-0">
-            <div class="profile">
-             <div class="profile-img text-primary rounded-top">
-              <svg fill="currentColor" viewbox="0 0 400 140.74" xmlns="http://www.w3.org/2000/svg">
-               <defs>
-                <style>
-                 .cls-2{fill:#fff;opacity:0.1;}
-                </style>
-               </defs>
-               <g>
-                <g>
-                 <path d="M400,125A1278.49,1278.49,0,0,1,0,125V0H400Z">
-                 </path>
-                 <path class="cls-2" d="M361.13,128c.07.83.15,1.65.27,2.46h0Q380.73,128,400,125V87l-1,0a38,38,0,0,0-38,38c0,.86,0,1.71.09,2.55C361.11,127.72,361.12,127.88,361.13,128Z">
-                 </path>
-                 <path class="cls-2" d="M12.14,119.53c.07.79.15,1.57.26,2.34v0c.13.84.28,1.66.46,2.48l.07.3c.18.8.39,1.59.62,2.37h0q33.09,4.88,66.36,8,.58-1,1.09-2l.09-.18a36.35,36.35,0,0,0,1.81-4.24l.08-.24q.33-.94.6-1.9l.12-.41a36.26,36.26,0,0,0,.91-4.42c0-.19,0-.37.07-.56q.11-.86.18-1.73c0-.21,0-.42,0-.63,0-.75.08-1.51.08-2.28a36.5,36.5,0,0,0-73,0c0,.83,0,1.64.09,2.45C12.1,119.15,12.12,119.34,12.14,119.53Z">
-                 </path>
-                 <circle class="cls-2" cx="94.5" cy="57.5" r="22.5">
-                 </circle>
-                 <path class="cls-2" d="M276,0a43,43,0,0,0,43,43A43,43,0,0,0,362,0Z">
-                 </path>
-                </g>
-               </g>
-              </svg>
-             </div>
-             <div class="profile-body p-0">
-              <div class="avatar avatar-lg">
-               <span class="avatar-text bg-primary">
-                <svg class="feather feather-image" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                 <rect height="18" rx="2" ry="2" width="18" x="3" y="3">
-                 </rect>
-                 <circle cx="8.5" cy="8.5" r="1.5">
-                 </circle>
-                 <polyline points="21 15 16 10 5 21">
-                 </polyline>
-                </svg>
-               </span>
-               <div class="badge badge-lg badge-circle bg-primary border-outline position-absolute bottom-0 end-0">
-                <svg class="feather feather-plus" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                 <line x1="12" x2="12" y1="5" y2="19">
-                 </line>
-                 <line x1="5" x2="19" y1="12" y2="12">
-                 </line>
-                </svg>
-               </div>
-               <input class="d-none" id="upload-chat-img" type="file"/>
-               <label class="stretched-label mb-0" for="upload-chat-img">
-               </label>
-              </div>
-             </div>
-            </div>
-            <div class="card-body">
-             <form autocomplete="off">
-              <div class="row gy-6">
-               <div class="col-12">
-                <div class="form-floating">
-                 <input class="form-control" id="floatingInput" placeholder="Enter a chat name" type="text"/>
-                 <label for="floatingInput">
-                  Enter group name
-                 </label>
-                </div>
-               </div>
-               <div class="col-12">
-                <div class="form-floating">
-                 <textarea class="form-control" data-autosize="true" id="floatingTextarea" placeholder="Description" rows="8" style="min-height: 100px;"></textarea>
-                 <label for="floatingTextarea">
-                  What's your purpose?
-                 </label>
-                </div>
-               </div>
-              </div>
-             </form>
-            </div>
-           </div>
-           <div class="d-flex align-items-center mt-4 px-6">
-            <small class="text-muted me-auto">
-             Enter chat name and add an optional photo.
-            </small>
-           </div>
-           <!-- Options -->
-           <div class="mt-8">
-            <div class="d-flex align-items-center mb-4 px-6">
-             <small class="text-muted me-auto">
-              Options
-             </small>
-            </div>
-            <div class="card border-0">
-             <div class="card-body">
-              <div class="row gx-5">
-               <div class="col-auto">
-                <div class="btn btn-sm btn-icon btn-dark">
-                 <svg class="feather feather-lock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                  <rect height="11" rx="2" ry="2" width="18" x="3" y="11">
-                  </rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4">
-                  </path>
-                 </svg>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Make Private
-                </h5>
-                <p>
-                 Can only be viewed by invites
-                </p>
-               </div>
-               <div class="col-auto align-self-center">
-                <div class="form-check form-switch ps-0">
-                 <input class="form-check-input" id="new-chat-options-1" type="checkbox"/>
-                 <label class="form-check-label" for="new-chat-options-1">
-                 </label>
-                </div>
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-          </div>
-          <!-- Members -->
-          <div class="tab-pane fade" id="create-chat-members" role="tabpanel">
-           <nav>
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              B
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/6.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Bill Marrow
-                </h5>
-                <p>
-                 last seen 3 days ago
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-1" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-1">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-1">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              D
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/5.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Damian Binder
-                </h5>
-                <p>
-                 last seen within a week
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-2" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-2">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-2">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar avatar-online">
-                 <span class="avatar-text">
-                  D
-                 </span>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Don Knight
-                </h5>
-                <p>
-                 online
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-3" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-3">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-3">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              E
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar avatar-online">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/8.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Elise Dennis
-                </h5>
-                <p>
-                 online
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-4" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-4">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-4">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              M
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar">
-                 <span class="avatar-text">
-                  M
-                 </span>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Marshall Wallaker
-                </h5>
-                <p>
-                 last seen within a month
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-6" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-6">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-6">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/11.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Mila White
-                </h5>
-                <p>
-                 last seen a long time ago
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-5" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-5">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-5">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              O
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar avatar-online">
-                 <span class="avatar-text">
-                  O
-                 </span>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Ollie Chandler
-                </h5>
-                <p>
-                 online
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-7" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-7">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-7">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <div class="my-5">
-             <small class="text-uppercase text-muted">
-              W
-             </small>
-            </div>
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/4.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 Warren White
-                </h5>
-                <p>
-                 last seen recently
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-8" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-8">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-8">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-            <!-- Card -->
-            <div class="card border-0 mt-5">
-             <div class="card-body">
-              <div class="row align-items-center gx-5">
-               <div class="col-auto">
-                <div class="avatar avatar-online">
-                 <img alt="" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/7.jpg"/>
-                </div>
-               </div>
-               <div class="col">
-                <h5>
-                 William Wright
-                </h5>
-                <p>
-                 online
-                </p>
-               </div>
-               <div class="col-auto">
-                <div class="form-check">
-                 <input class="form-check-input" id="id-member-9" type="checkbox" value=""/>
-                 <label class="form-check-label" for="id-member-9">
-                 </label>
-                </div>
-               </div>
-              </div>
-              <label class="stretched-label" for="id-member-9">
-              </label>
-             </div>
-            </div>
-            <!-- Card -->
-           </nav>
-          </div>
-         </div>
-         <!-- Tabs content -->
-        </div>
-       </div>
-       <!-- Button -->
-       <div class="container mt-n4 mb-8 position-relative">
-        <button class="btn btn-lg btn-primary w-100 d-flex align-items-center" type="button">
-         Start chat
-         <span class="icon ms-auto">
-          <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-           <polyline points="9 18 15 12 9 6">
-           </polyline>
-          </svg>
-         </span>
-        </button>
-       </div>
-       <!-- Button -->
-      </div>
-     </div>
      <!-- Friends -->
      <div class="tab-pane fade h-100" id="tab-content-friends" role="tabpanel">
       <div class="d-flex flex-column h-100">
@@ -1139,403 +645,45 @@
          <!-- Chats -->
          <div class="card-list">
           <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-group.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/7.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                William Wright
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                12:45 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores now.
-               </div>
-               <div class="badge badge-circle bg-primary ms-5">
-                <span>
-                 3
-                </span>
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-           <div class="card-footer">
-            <div class="row align-items-center gx-4">
-             <div class="col-auto">
-              <div class="avatar avatar-xs">
-               <img alt="Bootstrap Community" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/bootstrap.svg"/>
-              </div>
-             </div>
-             <div class="col">
-              <h6 class="mb-0">
-               Bootstrap Community
-              </h6>
-             </div>
-             <div class="col-auto">
-              <div class="avatar-group">
-               <div class="avatar avatar-xs">
-                <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/12.jpg"/>
-               </div>
-               <div class="avatar avatar-xs">
-                <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/11.jpg"/>
-               </div>
-               <div class="avatar avatar-xs">
-                <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/9.jpg"/>
-               </div>
-               <div class="avatar avatar-xs">
-                <span class="avatar-text">
-                 +5
-                </span>
-               </div>
-              </div>
-             </div>
-            </div>
-            <!-- .row -->
-           </div>
-           <!-- .card-footer -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/6.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Ollie Chandler
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                08:45 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet friend of mine at the departments stores now.
-               </div>
-               <div class="badge badge-circle bg-primary ms-5">
-                <span>
-                 3
-                </span>
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-empty.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/8.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Elise Dennis
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                08:35 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                is typing
-                <span class="typing-dots">
-                 <span>
-                  .
-                 </span>
-                 <span>
-                  .
-                 </span>
-                 <span>
-                  .
-                 </span>
-                </span>
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar-group-trigon avatar-group-trigon-sm">
-               <div class="avatar avatar-sm">
-                <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/7.jpg"/>
-               </div>
-               <div class="avatar avatar-sm">
-                <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/9.jpg"/>
-               </div>
-               <div class="avatar avatar-sm">
-                <span class="avatar-text bg-primary">
-                 D
-                </span>
-               </div>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Don Knight
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                08:35 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/4.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Warren White
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                06:20 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/11.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Mila White
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                04:40 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <img alt="#" class="avatar-img" src="themes/messenger/2.2.0/assets/img/avatars/5.jpg"/>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Damian Binder
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                02:45 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <span class="avatar-text">
-                B
-               </span>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Bill Marrow
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                12:20 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="#">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar avatar-online">
-               <span class="avatar-text">
-                M
-               </span>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="me-auto mb-0">
-                Marshall Wallaker
-               </h5>
-               <span class="text-muted extra-small ms-2">
-                12:18 PM
-               </span>
-              </div>
-              <div class="d-flex align-items-center">
-               <div class="line-clamp me-auto">
-                Hello! Yeah, I'm going to meet my friend of mine at the departments stores as soon as possible.
-               </div>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar">
-               <svg aria-label="Placeholder" class="avatar-img placeholder-img" focusable="false" height="100%" preserveaspectratio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <title>
-                 Placeholder
-                </title>
-                <rect fill="#868e96" height="100%" width="100%">
-                </rect>
-               </svg>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="placeholder-glow w-100 mb-0">
-                <span class="placeholder col-5">
-                </span>
-               </h5>
-              </div>
-              <div class="placeholder-glow">
-               <span class="placeholder col-12">
-               </span>
-               <span class="placeholder col-8">
-               </span>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
-          <!-- Card -->
-          <a class="card border-0 text-reset" href="chat-direct.html">
-           <div class="card-body">
-            <div class="row gx-5">
-             <div class="col-auto">
-              <div class="avatar">
-               <svg aria-label="Placeholder" class="avatar-img placeholder-img" focusable="false" height="100%" preserveaspectratio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                <title>
-                 Placeholder
-                </title>
-                <rect fill="#868e96" height="100%" width="100%">
-                </rect>
-               </svg>
-              </div>
-             </div>
-             <div class="col">
-              <div class="d-flex align-items-center mb-3">
-               <h5 class="placeholder-glow w-100 mb-0">
-                <span class="placeholder col-5">
-                </span>
-               </h5>
-              </div>
-              <div class="placeholder-glow">
-               <span class="placeholder col-12">
-               </span>
-               <span class="placeholder col-8">
-               </span>
-              </div>
-             </div>
-            </div>
-           </div>
-           <!-- .card-body -->
-          </a>
-          <!-- Card -->
+          {% if chat_users %}
+                {% for user in chat_users %}
+                <a href="{% url 'chat_group' user.id %}" class="card border-0 text-reset" id="toggleChatBtn">
+                    <div class="card-body">
+                     <div class="row gx-5">
+                      <div class="col-auto">
+                       <div class="avatar avatar-{{ user.status }}">
+                        {% if user.photo_url %}
+                            <img alt="#" class="avatar-img" src="{{user.photo_url.url}}"/>
+                         {% else %}
+                             <img alt="#" class="avatar-img" src="https://static.vecteezy.com/system/resources/previews/003/715/527/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg"/>
+                         {% endif %}
+                       </div>
+                      </div>
+                      <div class="col">
+                       <div class="d-flex align-items-center mb-3">
+                        <h5 class="me-auto mb-0">
+                         {{user.first_name }}
+                        </h5>
+                        <span class="text-muted extra-small ms-2">
+                         12:45 PM
+                        </span>
+                       </div>
+{#                       <div class="d-flex align-items-center">#}
+{#                        <div class="line-clamp me-auto">#}
+{#                         Hello! Yeah, I'm going to meet my friend of mine at the departments stores now.#}
+{#                        </div>#}
+{#                        <div class="badge badge-circle bg-primary ms-5">#}
+{#                         <span>#}
+{#                          3#}
+{#                         </span>#}
+{#                        </div>#}
+{#                       </div>#}
+                      </div>
+                     </div>
+                    </div>
+                   </a>
+                {% endfor %}
+          {% endif %}
          </div>
          <!-- Chats -->
         </div>
@@ -2036,178 +1184,6 @@
        </div>
       </div>
      </div>
-     <!-- Support -->
-     <div class="tab-pane fade h-100" id="tab-content-support" role="tabpanel">
-      <div class="d-flex flex-column h-100">
-       <div class="hide-scrollbar">
-        <div class="container py-8">
-         <!-- Title -->
-         <div class="mb-8">
-          <h2 class="fw-bold m-0">
-           Support
-          </h2>
-         </div>
-         <!-- Search -->
-         <div class="mb-6">
-          <form action="#">
-           <div class="input-group">
-            <div class="input-group-text">
-             <div class="icon icon-lg">
-              <svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-               <circle cx="11" cy="11" r="8">
-               </circle>
-               <line x1="21" x2="16.65" y1="21" y2="16.65">
-               </line>
-              </svg>
-             </div>
-            </div>
-            <input aria-label="Search for messages or users..." class="form-control form-control-lg ps-0" placeholder="Search messages or users" type="text"/>
-           </div>
-          </form>
-         </div>
-         <!-- Docs -->
-         <div class="card border-0">
-          <div class="card-body">
-           <div class="row align-items-center gx-5">
-            <div class="col-auto text-primary">
-             <svg enable-background="new 0 0 46 46" fill="currentColor" height="46px" version="1.1" viewbox="0 0 46 46" width="46px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-              <polygon opacity="0.7" points="45,11 36,11 35.5,1 ">
-              </polygon>
-              <polygon points="35.5,1 25.4,14.1 39,21 ">
-              </polygon>
-              <polygon opacity="0.4" points="17,9.8 39,21 17,26 ">
-              </polygon>
-              <polygon opacity="0.7" points="2,12 17,26 17,9.8 ">
-              </polygon>
-              <polygon opacity="0.7" points="17,26 39,21 28,36 ">
-              </polygon>
-              <polygon points="28,36 4.5,44 17,26 ">
-              </polygon>
-              <polygon points="17,26 1,26 10.8,20.1 ">
-              </polygon>
-             </svg>
-            </div>
-            <div class="col">
-             <h4 class="mb-1">
-              Documentation
-             </h4>
-             <p>
-              Setup and build tools
-             </p>
-            </div>
-            <div class="col-auto">
-             <a class="btn btn-sm btn-icon btn-primary rounded-circle" href="docs/index.html">
-              <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-               <polyline points="9 18 15 12 9 6">
-               </polyline>
-              </svg>
-             </a>
-            </div>
-           </div>
-          </div>
-         </div>
-         <!-- Docs -->
-         <!-- Account Pages -->
-         <div class="card-list mt-8">
-          <div class="d-flex align-items-center mb-4 px-6">
-           <small class="text-muted me-auto">
-            Pages
-           </small>
-          </div>
-          <div class="card border-0">
-           <div class="card-body">
-            <div class="row align-items-center gx-0">
-             <div class="col">
-              <h4 class="mb-1">
-               Sign In
-              </h4>
-              <p>
-               Sign in Page
-              </p>
-             </div>
-             <div class="col-auto">
-              <a class="btn btn-sm btn-icon btn-primary rounded-circle" href="signin.html">
-               <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6">
-                </polyline>
-               </svg>
-              </a>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="card border-0">
-           <div class="card-body">
-            <div class="row align-items-center gx-0">
-             <div class="col">
-              <h4 class="mb-1">
-               Sign Up
-              </h4>
-              <p>
-               Sign Up Page
-              </p>
-             </div>
-             <div class="col-auto">
-              <a class="btn btn-sm btn-icon btn-primary rounded-circle" href="signup.html">
-               <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6">
-                </polyline>
-               </svg>
-              </a>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="card border-0">
-           <div class="card-body">
-            <div class="row align-items-center gx-0">
-             <div class="col">
-              <h4 class="mb-1">
-               Password Reset
-              </h4>
-              <p>
-               Password Reset Page
-              </p>
-             </div>
-             <div class="col-auto">
-              <a class="btn btn-sm btn-icon btn-primary rounded-circle" href="password-reset.html">
-               <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6">
-                </polyline>
-               </svg>
-              </a>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="card border-0">
-           <div class="card-body">
-            <div class="row align-items-center gx-0">
-             <div class="col">
-              <h4 class="mb-1">
-               Lock screen
-              </h4>
-              <p>
-               Lock screen Page
-              </p>
-             </div>
-             <div class="col-auto">
-              <a class="btn btn-sm btn-icon btn-primary rounded-circle" href="lockscreen.html">
-               <svg class="feather feather-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 18 15 12 9 6">
-                </polyline>
-               </svg>
-              </a>
-             </div>
-            </div>
-           </div>
-          </div>
-         </div>
-         <!-- Account Pages -->
-        </div>
-       </div>
-      </div>
-     </div>
      <!-- Settings -->
      <div class="tab-pane fade h-100" id="tab-content-settings" role="tabpanel">
       <div class="d-flex flex-column h-100">
@@ -2258,8 +1234,8 @@
                 </polyline>
                </svg>
               </div>
-              <input class="d-none" id="upload-profile-photo" type="file"/>
-              <label class="stretched-label mb-0" for="upload-profile-photo">
+                <input class="d-none" id="upload-profile-photo" type="file" onchange="uploadPhoto()"/>
+                <label class="stretched-label mb-0" for="upload-profile-photo"></label>
               </label>
              </div>
             </div>
@@ -2317,38 +1293,72 @@
                 </div>
                </a>
               </div>
-              <div aria-labelledby="accordion-profile-1" class="accordion-collapse collapse" data-parent="#accordion-profile" id="accordion-profile-body-1">
-               <div class="accordion-body">
+              <form aria-labelledby="accordion-profile-1" class="accordion-collapse collapse" data-parent="#accordion-profile" id="accordion-profile-body-1">
+               <form class="accordion-body" method="post" action="{% url 'users:update_profile' %}">
+                {% csrf_token %}
                 <div class="form-floating mb-6">
-                 <input class="form-control" id="profile-name" placeholder="Name" type="text"/>
+                 <input class="form-control" id="first_name" placeholder="Name" type="text" value="{{ request.user.first_name }}"/>
                  <label for="profile-name">
-                  Name
+                  First name
                  </label>
                 </div>
                 <div class="form-floating mb-6">
-                 <input class="form-control" id="profile-email" placeholder="Email address" type="email"/>
+                    <input class="form-control" id="last_name" placeholder="Name" type="text" value="{{ request.user.last_name }}"/>
+                    <label for="profile-name">
+                     Last name
+                    </label>
+                   </div>
+                <div class="form-floating mb-6">
+                 <input class="form-control" id="profile-email" placeholder="Email address" type="email" value="{{ request.user.email }}" disabled/>
                  <label for="profile-email">
                   Email
                  </label>
                 </div>
                 <div class="form-floating mb-6">
-                 <input class="form-control" id="profile-phone" placeholder="Phone" type="text"/>
-                 <label for="profile-phone">
-                  Phone
-                 </label>
+                    <select class="form-select" id="country" name="country">
+                        <option value="" selected>{% if request.user.country %}{{ request.user.country }}{% else %}Select your country{% endif %}</option>
+                    </select>
+                    <label for="country">Country</label>
                 </div>
                 <div class="form-floating mb-6">
-                 <textarea class="form-control" data-autosize="true" id="profile-bio" placeholder="Bio" style="min-height: 120px;"></textarea>
+                    <select class="form-select" id="region" name="region">
+                        <option value="" selected>{% if request.user.city %}{{ request.user.city }}{% else %}Select your region{% endif %}</option>
+                    </select>
+                    <label for="region">Country</label>
+                </div>
+                <div class="form-floating mb-6">
+                    <select class="form-select" id="gender" name="gender">
+                        <option value="">
+                            {% if request.user.gender %}
+                                {% if request.user.gender == 'M' %}
+                                Male
+                                {% else %}
+                                Female
+                                {% endif %}
+                            {% else %}
+                            Select a gender
+                            {% endif %}
+                        </option>
+                        <option value="M">
+                            Male
+                        </option>
+                        <option value="F">
+                            Female
+                        </option>
+                    </select>
+                    <label for="gender">Gender</label>
+                </div>
+                <div class="form-floating mb-6">
+                 <textarea class="form-control" data-autosize="true" id="profile-bio" placeholder="Bio" style="min-height: 120px;">{% if request.user.bio %}{{ request.user.bio }}{% endif %}</textarea>
                  <label for="profile-bio">
                   Bio
                  </label>
                 </div>
-                <button class="btn btn-block btn-lg btn-primary w-100" type="button">
+                <button class="btn btn-block btn-lg btn-primary w-100" id="save-profile" type="button">
                  Save
                 </button>
-               </div>
-              </div>
-             </div>
+               </form>
+              </form>
              <!-- Switch -->
              <div class="accordion-item">
               <div class="accordion-header">
@@ -2470,18 +1480,7 @@
            <div class="card-body py-2">
             <div class="accordion accordion-flush" id="accordion-notifications">
              <div class="accordion-item">
-              <div class="accordion-header" id="accordion-notifications-1">
-               <a aria-controls="accordion-notifications-body-1" aria-expanded="false" class="accordion-button text-reset collapsed" data-bs-target="#accordion-notifications-body-1" data-bs-toggle="collapse" href="#">
-                <div>
-                 <h5>
-                  Message
-                 </h5>
-                 <p>
-                  Set custom notifications for users
-                 </p>
-                </div>
-               </a>
-              </div>
+             
               <div aria-labelledby="accordion-notifications-1" class="accordion-collapse collapse" data-parent="#accordion-notifications" id="accordion-notifications-body-1">
                <div class="accordion-body">
                 <div class="row align-items-center">
@@ -2535,4 +1534,191 @@
       </div>
      </div>
     </div>
+    </div>
    </aside>
+<script>
+    const username = "asadbekjon";
+    const countrySelect = document.getElementById("country");
+    const regionSelect = document.getElementById("region");
+
+
+    fetch(`http://api.geonames.org/countryInfoJSON?lang=en&username=${username}`)
+        .then(response => response.json())
+        .then(data => {
+            const countries = data.geonames;
+            countries.forEach(country => {
+                const option = document.createElement("option");
+                option.value = country.geonameId;
+                option.text = country.countryName;
+                countrySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error("Davlatlarni yuklashda xato:", error));
+
+    countrySelect.addEventListener("change", function() {
+        const geonameId = this.value;
+        regionSelect.innerHTML = "<option value=''>Select a region</option>";
+        regionSelect.disabled = true;
+
+        if (geonameId) {
+            fetch(`http://api.geonames.org/childrenJSON?lang=en&geonameId=${geonameId}&username=${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.geonames) {
+                        const regions = data.geonames;
+                        regions.forEach(region => {
+                            const option = document.createElement("option");
+                            option.value = region.geonameId;
+                            option.text = region.name;
+                            regionSelect.appendChild(option);
+                        });
+                        regionSelect.disabled = false;
+                    }
+                })
+                .catch(error => console.error("Regionlarni yuklashda xato:", error));
+        }
+    });
+
+    document.getElementById("country").addEventListener("change", function () {
+        let selectedOption = this.options[this.selectedIndex];
+        let selectedText = selectedOption.textContent;
+    });
+
+    function showToast(message, type) {
+        const toastContainer = document.querySelector('.toast-container');
+
+        const toast = document.createElement('div');
+        toast.className = `toast align-items-center text-white border-0 position-relative show`;
+        toast.setAttribute('role', 'alert');
+        toast.setAttribute('aria-live', 'assertive');
+        toast.setAttribute('aria-atomic', 'true');
+        toast.style.minWidth = '250px';
+        toast.style.marginBottom = '10px';
+        toast.style.padding = '10px 15px';
+        toast.style.borderRadius = '5px';
+        toast.style.color = 'white';
+
+        if (type === 'success') {
+            toast.style.backgroundColor = '#0f79f4';
+        } else if (type === 'danger') {
+            toast.style.backgroundColor = 'red';
+        } else if (type === 'info') {
+            toast.style.backgroundColor = 'blue';
+        } else if (type === 'warning') {
+            toast.style.backgroundColor = 'orange';
+        } else {
+            toast.style.backgroundColor = 'gray';
+        }
+
+        toast.innerHTML = `
+            <div class="toast-body">
+                ${message}
+            </div>
+            <div class="toast-progress"></div>
+        `;
+
+        toastContainer.appendChild(toast);
+
+        setTimeout(() => {
+            toast.remove();
+        }, 3000);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("save-profile").addEventListener("click", function () {
+            let csrfToken = getCookie("csrftoken") || document.querySelector("[name=csrfmiddlewaretoken]").value;
+
+            let firstName = document.getElementById("first_name").value;
+            let lastName = document.getElementById("last_name").value;
+            let country = document.getElementById("country");
+            let region = document.getElementById("region");
+            let gender = document.getElementById("gender").value;
+            let bio = document.getElementById("profile-bio").value;
+
+            let selectedOptionCountry = country.options[country.selectedIndex];
+            let countryText = selectedOptionCountry.textContent;
+
+            let selectedOptionRegion = region.options[region.selectedIndex];
+            let regionText = selectedOptionRegion.textContent;
+
+            fetch("/users/update-profile/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrfToken
+                },
+                credentials: "same-origin",
+                body: JSON.stringify({
+                    first_name: firstName,
+                    last_name: lastName,
+                    country: countryText,
+                    region: regionText,
+                    gender: gender,
+                    bio: bio
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                showToast(data.message, "success")
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while updating the profile.");
+            });
+        });
+
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                let cookies = document.cookie.split(";");
+                for (let i = 0; i < cookies.length; i++) {
+                    let cookie = cookies[i].trim();
+                    if (cookie.startsWith(name + "=")) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    });
+
+    const uploadInput = document.getElementById('upload-profile-photo');
+    const avatarImgs = document.querySelectorAll('.avatar-img')
+
+    uploadInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append('photo', file);
+
+        fetch("{% url 'users:update_photo' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                showToast(data.message, "success")
+                avatarImgs.forEach(img => {
+                    img.src = data.photo_url + '?timestamp=' + new Date().getTime();
+                });
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>

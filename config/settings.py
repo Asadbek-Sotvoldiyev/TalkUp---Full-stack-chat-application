@@ -15,7 +15,10 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = ['*']
+
+FERNET_KEY = config('FERNET_KEY')
 
 
 # Application definition
@@ -23,6 +26,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.admin',
+    "daphne",
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -35,11 +39,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.yandex',
+
 
     #Local apps
     'chat',
     'users',
-    'users.providers.telegram',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -68,11 +73,9 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['user', 'repo', 'read:org'],
         'OAUTH_PKCE_ENABLED': True,
     },
-    'telegram': {
-        "TOKEN": config('BOT_TOKEN'),
-        "APP_DOMAIN": config('APP_DOMAIN'),
-        "AUTH_PARAMS": {"auth_date_validity": 30},
-        "METHOD": "phone_number"
+    'yandex': {
+        'SCOPE': ['login:email', 'login:info'],
+        'AUTH_PARAMS': {'force_confirm': 'yes'},
     }
 }
 
@@ -106,7 +109,23 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+# WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = "config.asgi.application"
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("127.0.0.1", 6379)],
+#         },
+#     },
+# }
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Database
@@ -144,7 +163,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 

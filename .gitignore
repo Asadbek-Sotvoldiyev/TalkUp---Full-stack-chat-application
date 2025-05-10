@@ -2,8 +2,8 @@
 .idea
 db.sqlite3
 media
-static
 .env
 **/__pycache__
 **/__pycache__/**
 __pycache__
+venv
